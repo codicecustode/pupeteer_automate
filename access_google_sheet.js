@@ -46,7 +46,7 @@ const automateLoginProcessOfLinkedin = async (url, username, password) => {
     //const browser = await puppeteer.launch({ headless: false });
     const browser = await puppeteer.launch({
         args: ['--no-sandbox', '--disable-setuid-sandbox'],
-        executablePath: '/opt/render/.cache/puppeteer', // Optional: Specify Chrome executable path
+        executablePath: '/opt/google/chrome/chrome', // Example path on Render
         userDataDir: '/opt/render/.cache/puppeteer', // Ensure this matches the cache path on Render
     });
     const page = await browser.newPage();
