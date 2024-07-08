@@ -17,14 +17,14 @@ app.get('/login/:rowIndex', async (req, res) => {
             
             if (websiteUrl.includes('linkedin')) {
 
-                await automateLoginProcessOfLinkedin(websiteUrl, username, password);
+                await automateLoginProcessOfLinkedin(process.env.LINKEDIN_URL, username, password);
                 res.status(200).send('Login process initiated successfully.');
 
             } else if(websiteUrl.includes('amazone')){
 
                 await automateLoginProcessOfAmazone(process.env.AMAZONE_URL, username, password);
                 res.status(200).send('Login process initiated successfully.');
-                
+
             }
             else {
                 res.status(404).send(`Invalid URL index ${rowIndex}`);
